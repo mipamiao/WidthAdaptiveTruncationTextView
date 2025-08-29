@@ -1,0 +1,2 @@
+# WidthAdaptiveTruncationTextView
+用来做自定义宽度截断的拓展texiview，支持在最后一行预留出指定宽度的截断,向下兼容至api21  实现为根据layout的布局结果自行计算最后一行的宽度并截断留出reverseWidth，考虑到最后一行 截断后该行变短可能会回缩至倒数第二行 （例如宽度为10个字符a时a aaaaaaaaaaaa会被视为两行，这个时候对最后一行截断为 a aa...就会变为一行，与原布局不符），  于是使用占位span的方式，将整个最后一行设置为自定义的占 位spanstr，宽度为单行宽度，并自行drawtext，占位空间内左对齐绘制文字
